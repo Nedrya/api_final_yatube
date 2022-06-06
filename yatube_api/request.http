@@ -1,0 +1,116 @@
+@TOKEN =Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU0NTgzNjg0LCJqdGkiOiJiZmNmNjc2ZWJkMmQ0MzEzYWYwYWYzYTNlNDI2YjdhNiIsInVzZXJfaWQiOjF9.EKjdgiqDA19aOdchZpjBuVZCZtavYXZv1O8CmOmXEJM
+
+@TOKEN2 =Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU0NjI2MDAxLCJqdGkiOiI4NzE4ODM3YWFhYzc0MWFjYjE5MTVhOWFiYmE2OGI1MSIsInVzZXJfaWQiOjJ9.5d52AxcOysOm-8NvqV4UL3sV8UaGg4_V9c6KL4NPxEE
+
+@TOKEN3 =Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU0NjI2MDIzLCJqdGkiOiI3MzQ1YjNkMWJjYzg0YjY0YTc5NDViNGFjZTg4ZWEwNSIsInVzZXJfaWQiOjN9.j3alukOlb3Fy1Pwi-tiNOyHU8PGkdoSbpnRUgXTVJ6k
+
+
+
+
+
+
+
+GET http://127.0.0.1:8000/api/v1/posts/1/comments/
+
+###
+
+POST http://127.0.0.1:8000/api/v1/posts/
+Content-Type: application/json
+Authorization: {{TOKEN}}
+
+{
+"text": "string",
+"image": "string"
+}
+
+###
+
+GET http://127.0.0.1:8000/api/v1/follow/
+Authorization: {{TOKEN}}
+
+###
+
+GET http://127.0.0.1:8000/api/v1/follow/?search=Admin
+Authorization: {{TOKEN}}
+
+###
+
+GET http://127.0.0.1:8000/api/v1/posts/1/comments/
+Authorization: {{TOKEN}}
+
+###
+POST http://127.0.0.1:8000/api/v1/groups/
+Content-Type: application/json
+Authorization: {{TOKEN}}
+
+{
+    "text": "test"
+}
+
+
+###
+PUT   http://127.0.0.1:8000/api/v1/posts/1/
+Content-Type: application/json
+Authorization: {{TOKEN}}
+
+{
+    "text": "test"
+}
+
+###
+POST http://127.0.0.1:8000/api/v1/posts/1/comments/
+Content-Type: application/json
+Authorization: {{TOKEN}}
+
+{
+    "text": "test22"
+
+}
+
+
+###
+
+POST http://127.0.0.1:8000/api/v1/follow/
+Authorization: {{TOKEN3}}
+Content-Type: application/json
+
+{
+
+    "following": "Admin"
+} 
+
+###
+
+
+POST http://127.0.0.1:8000/api/v1/jwt/create/
+Content-Type: application/json
+
+    {
+        "username": "Admin2",
+        "password": "!!!admin!!!"
+    }
+
+###
+
+POST http://127.0.0.1:8000/auth/users/
+Content-Type: application/json
+
+
+    {
+        "username": "Admin2",
+        "password": "!!!admin!!!"
+    }
+
+###
+POST http://127.0.0.1:8000/auth/users/
+Content-Type: application/json
+
+    {
+        "username": "Admin2",
+        "password": "!!!admin!!!"
+    }
+
+
+###
+GET http://127.0.0.1:8000/ HTTP/1.1
+Authorization: {{TOKEN}}
